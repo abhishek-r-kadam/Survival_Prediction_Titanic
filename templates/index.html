@@ -3,21 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Titanic Survival Prediction</title>
+    <style>
+        body {
+            background-image: url(https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1638882458/EducationHub/photos/titanic-sinking.jpg); /* Replace with the path to your image file */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;  
+        }
+
+        form {
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background with 70% transparency */
+            color: white; /* Text color */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            color: white;
+        }
+
+        input {
+            width: calc(100% - 50px);
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    Titanic Survival Prediction
-    ["Pclass", "Sex", "Age", "SibSp", "Parch", "Fare", "Embarked"]
-    <form action = "/predict" method = "POST">
-        Pclass   : <input type="text" name = "Pclass"> <br>
-        Sex      : <input type="text" name = "Sex"> <br>
-        Age      : <input type="text" name = "Age"> <br>
-        SibSp    : <input type="text" name = "SibSp"> <br>
-        Parch    : <input type="text" name = "Parch"> <br>
-        Fare     : <input type="text" name = "Fare"> <br>
-        Embarked : <input type="text" name = "Embarked"> <br>
+    <form action="/predict" method="POST">
+        <h1>Titanic Survival Prediction</h1>
+        
+        <label for="Pclass">Pclass:
+            <select id="Pclass" name="Pclass" required>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+            </select>
+        </label>
 
-        <input type = "submit">
+        <label for="Sex">Sex:
+            <select id="Sex" name="Sex" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+        </label>
 
+        <label for="Age">Age:
+            <input type="text" id="Age" name="Age" required>
+        </label>
+
+        <label for="SibSp">SibSp:
+            <select id="SibSp" name="SibSp" required>
+                <option value="1">1</option>
+                <option value="0">0</option>
+            </select>
+        </label>
+
+        <label for="Parch">Parch:
+            <select id="Parch" name="Parch" required>
+                <option value="1">1</option>
+                <option value="0">0</option>
+            </select>
+        </label>
+
+        <label for="Fare">Fare:
+            <input type="text" id="Fare" name="Fare" required>
+        </label>
+
+        <label for="Embarked">Embarked:
+            <select id="Embarked" name="Embarked" required>
+                <option value="S">S</option>
+                <option value="C">C</option>
+                <option value="Q">Q</option>
+            </select>
+        </label>
+
+        <input type="submit" value="Predict">
+    </form>
 </body>
 </html>
