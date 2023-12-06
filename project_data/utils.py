@@ -34,9 +34,9 @@ class TitanicPrediction():
         result = self.model.predict([input_data])
         
         if result[0] == 1:
-            return "The Passenger Survived"
+            return 1  # Survived
         else:
-            return "The Passenger Died"
+            return 0  # Died
     
 
 if __name__ == "__main__":

@@ -25,6 +25,12 @@ def prediction():
     
     prediction = obj.predict()
     
-    return prediction
+    if prediction == 1:
+        return render_template("survived_template.html")
+    elif prediction == 0:
+        return render_template("died_template.html")
+    else:
+        # Handle other cases or errors as needed
+        return "Unknown prediction result"
 
 app.run(debug = True,host='0.0.0.0')
